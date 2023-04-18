@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\자율형 IoT\5_ComputerVision\sample_opencv\OpenCVAppGUI\x64\Debug\OpenCVAppGUI.exe</FullPath>
+      <FullPath>D:\23 자율형 공유폴더\C++_ComputerVision_MachineLearning_Project\sample_opencv_platform\OpenCVAppGUI\x64\Debug\OpenCVAppGUI.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

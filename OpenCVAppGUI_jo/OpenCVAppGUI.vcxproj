@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{3F2252E2-E2B9-43AA-BAB5-A3181BABE440}</ProjectGuid>
+    <ProjectGuid>{635DCA1D-E4F0-4931-8CAE-555CD35F26AB}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
     <RootNamespace>OpenCVAppGUI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>

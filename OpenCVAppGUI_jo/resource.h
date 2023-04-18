@@ -8,29 +8,24 @@
 #define IDD_OPENCVAPPGUI_DIALOG         102
 #define IDP_SOCKETS_INIT_FAILED         103
 #define IDR_MAINFRAME                   128
-#define IDC_BTN_Load                    1013
-#define IDC_BTN_Save                    1014
-#define IDC_PICTURE                     1015
-#define IDC_PICTURE2                    1016
-#define IDC_PICTURE_RESULT              1016
-#define IDC_BTN_CH                      1017
-#define IDC_BTN_INSPECTION              1017
-#define IDC_PICTURE_DEBUG               1018
-#define IDC_INPUT                       1019
-#define IDC_OUTPUT                      1020
-#define IDC_OUTPUT_RESULT               1020
-#define IDC_INPUT_DEBUG                 1021
-#define IDC_BTN_INSPECTION_CV           1022
-#define IDC_BTN_Save2                   1023
-#define IDC_BTN_SampleCode              1023
+#define IDC_BTN_LOAD                    1013
+#define IDC_BTN_SAVE                    1014
+#define IDC_BTN_INSPECTION              1015
+#define IDC_PICTURE                     1016
+#define IDC_PICTURE_DEBUG               1017
+#define IDC_PICTURE_DEBUG2              1018
+#define IDC_PICTURE_RESULT              1018
+#define IDC_BTN_INSPECTION_CV           1019
+#define IDC_BUTTON1                     1020
+#define IDC_BTN_SAMPLE_CODE             1020
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        131
+#define _APS_NEXT_RESOURCE_VALUE        130
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1020
+#define _APS_NEXT_CONTROL_VALUE         1021
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

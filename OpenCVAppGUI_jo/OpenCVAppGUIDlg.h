@@ -25,10 +25,13 @@
 using namespace std;
 using namespace cv;
 
+enum { eImgSrcColor = 0, eImgSrcGray, eImgDebugGray, eImgDebugColor, eImgDrawColor, eImgResultColor, eImgBufferMax};
 
-enum { eImgSrcColor = 0, eImgSrcGray, eImgDebugGray, eImgDrawColor, eImgResultColor, eImgDebugColor,eImgBufferMax};
+
 
 typedef int(*InspMethod)(void*);
+
+
 
 // COpenCVAppGUIDlg 대화 상자
 class COpenCVAppGUIDlg : public CDialogEx
@@ -46,6 +49,8 @@ public:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 지원입니다.
 
 
+
+
 private : 
 	std::map<string, InspMethod> _mInsps;// { {"src", 10}, { "GPU", 15 }, { "RAM", 20 } };
 	std::map<int, cv::Mat> _mMatBuff;// { {"src", 10}, { "GPU", 15 }, { "RAM", 20 } };
@@ -60,18 +65,14 @@ private :
 
 	bool _bShowResult = false;
 	bool _bShowDebug = false;
+
 	double _dSrcScale = 1.0, _dNewScale = 1.0;
 
-	vector<cv::Point> _vLinePoints;
+	vector<cv::Point> _vLinePoints_Left;
+	vector<cv::Point> _vLinePoints_Right;
+	vector<cv::Point> _vLinePoints_Top;
+	vector<cv::Point> _vLinePoints_Btm;
 	cv::Point _pt1, _pt2;
-	cv::Point _pt_tl, _pt_tr;
-	cv::Point _pt_bl, _pt_br;
-
-	size_t y1;
-	size_t y2;
-	size_t x1;
-	size_t x2;
-
 public:
 	void UpdateDispSrc();
 
@@ -85,11 +86,11 @@ private:
 
 	static int CallInspFindcontourSample(void* lpUserData);
 	static int CallInspFindShape(void* lpUserData);
+	static int CallInspFindMultiShape(void* ipUserData);
 
 	int OnInspFindcontourSample();
 	int OnInspFindShapes();
-	int Xpoint(Point _pt, Mat draw);
-
+	int OnInspFindMultiShape();
 // 구현입니다.
 protected:
 	HICON m_hIcon;
@@ -103,7 +104,9 @@ protected:
 public:
 	afx_msg void OnBnClickedBtnLoad();
 	afx_msg void OnBnClickedBtnSave();
-	afx_msg void OnBnClickedBtnInspection();	
+	afx_msg void OnBnClickedBtnInspection();
 	afx_msg void OnBnClickedBtnInspectionCv();
-	afx_msg void OnBnClickedBtnSamplecode();	
+	afx_msg void OnBnClickedBtnSampleCode();
+
+	void AddString(LPCTSTR lpszLog);
 };
