@@ -1,0 +1,7 @@
+[2] area = 1681.000 perimeter = 164.000 circularity = 0.785
+[3] area = 1526.000 perimeter = 145.539 circularity = 0.905
+[4] area = 10506.000 perimeter = 410.000 circularity = 0.785
+[5] area = 5586.000 perimeter = 279.764 circularity = 0.897
+[6] area = 983.000 perimeter = 143.397 circularity = 0.601
+[7] area = 415.000 perimeter = 75.598 circularity = 0.913
+[8] area = 1371.000 perimeter = 170.711 circularity = 0.591
