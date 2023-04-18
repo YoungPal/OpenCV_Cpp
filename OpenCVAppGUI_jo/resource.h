@@ -15,12 +15,14 @@
 #define IDC_PICTURE_RESULT              1016
 #define IDC_BTN_CH                      1017
 #define IDC_BTN_INSPECTION              1017
-#define IDC_PICTURE3                    1018
 #define IDC_PICTURE_DEBUG               1018
 #define IDC_INPUT                       1019
 #define IDC_OUTPUT                      1020
 #define IDC_OUTPUT_RESULT               1020
 #define IDC_INPUT_DEBUG                 1021
+#define IDC_BTN_INSPECTION_CV           1022
+#define IDC_BTN_Save2                   1023
+#define IDC_BTN_SampleCode              1023
 
 // Next default values for new objects
 // 

@@ -26,7 +26,9 @@ using namespace std;
 using namespace cv;
 
 
-enum { eImgSrcColor = 0, eImgSrcGray, eImgDebugGray, eImgDrawColor, eImgResultColor, eImgBufferMax};
+enum { eImgSrcColor = 0, eImgSrcGray, eImgDebugGray, eImgDrawColor, eImgResultColor, eImgDebugColor,eImgBufferMax};
+
+typedef int(*InspMethod)(void*);
 
 // COpenCVAppGUIDlg 대화 상자
 class COpenCVAppGUIDlg : public CDialogEx
@@ -44,9 +46,8 @@ public:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 지원입니다.
 
 
-
-
 private : 
+	std::map<string, InspMethod> _mInsps;// { {"src", 10}, { "GPU", 15 }, { "RAM", 20 } };
 	std::map<int, cv::Mat> _mMatBuff;// { {"src", 10}, { "GPU", 15 }, { "RAM", 20 } };
 	std::map<int, CRect> _mWndImageView;// { {1016, (10,10,300,400)}, { 2, (301,10,300,400) }, { "RAM", 20 } };
 
@@ -61,14 +62,33 @@ private :
 	bool _bShowDebug = false;
 	double _dSrcScale = 1.0, _dNewScale = 1.0;
 
+	vector<cv::Point> _vLinePoints;
+	cv::Point _pt1, _pt2;
+	cv::Point _pt_tl, _pt_tr;
+	cv::Point _pt_bl, _pt_br;
+
+	size_t y1;
+	size_t y2;
+	size_t x1;
+	size_t x2;
+
 public:
 	void UpdateDispSrc();
 
 private:
 	int OnAllocateBuffer(int cols, int rows);
+	int UpdateInspList();
+
 	int OnInspection(InputArray src, OutputArray dst);
 	int OnInspection(Mat src, Mat dst);
 	int OnInspection(uchar* pSrc, size_t cols, size_t rows, uchar* pDst);
+
+	static int CallInspFindcontourSample(void* lpUserData);
+	static int CallInspFindShape(void* lpUserData);
+
+	int OnInspFindcontourSample();
+	int OnInspFindShapes();
+	int Xpoint(Point _pt, Mat draw);
 
 // 구현입니다.
 protected:
@@ -83,5 +103,7 @@ protected:
 public:
 	afx_msg void OnBnClickedBtnLoad();
 	afx_msg void OnBnClickedBtnSave();
-	afx_msg void OnBnClickedBtnInspection();
+	afx_msg void OnBnClickedBtnInspection();	
+	afx_msg void OnBnClickedBtnInspectionCv();
+	afx_msg void OnBnClickedBtnSamplecode();	
 };
